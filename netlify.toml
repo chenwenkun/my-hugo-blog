@@ -1,0 +1,11 @@
+# Netlify build settings
+[build]
+  # 这是 Netlify 用来构建网站的命令
+  command = "hugo"
+  # 构建完成后，网站的静态文件所在的目录
+  publish = "public"
+
+# Hugo version settings for Netlify's environment
+[build.environment]
+  # (最关键的一步) 指定 Netlify 使用的 Hugo 版本
+  HUGO_VERSION = "0.129.0"
