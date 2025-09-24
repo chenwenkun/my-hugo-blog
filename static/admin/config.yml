@@ -1,0 +1,23 @@
+# 后台配置
+backend:
+  name: github
+  # 将 "your-username/my-hugo-blog" 替换成你自己的 "GitHub用户名/仓库名"
+  repo: "chenwenkun/my-hugo-blog" 
+  branch: main # 指定工作分支为 main
+
+# 媒体文件（如图片）的存储位置
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+# 内容集合，这里我们只定义“文章”
+collections:
+  - name: "post" # 集合的唯一标识符
+    label: "文章" # 在后台界面显示的名称
+    folder: "content/posts" # 文章的 Markdown 文件存储在哪个目录下
+    create: true # 允许在后台创建新文章
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # 生成的文件名格式
+    fields: # 定义文章包含哪些字段
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "是否草稿", name: "draft", widget: "boolean", default: true}
+      - {label: "正文", name: "body", widget: "markdown"}
