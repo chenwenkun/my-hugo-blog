@@ -1,0 +1,36 @@
+# .github/workflows/sync-notion.yml
+name: Sync Notion to Hugo
+
+on:
+  # 允许你手动在 GitHub Actions 页面触发这个工作流
+  workflow_dispatch:
+  # 设置定时任务，例如每6小时运行一次
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # 使用 Node.js 20 版本
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Sync content from Notion
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: node sync-notion.js
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Sync content from Notion"
+          file_pattern: 'content/**/*.md' # 只提交 content 目录下的 md 文件变动
