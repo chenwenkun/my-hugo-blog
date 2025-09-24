@@ -57,9 +57,8 @@ async function syncNotion() {
   }
 
   const data = await response.json();
-  
+
   // 修正部分：在这里创建 Martian 实例
-  // 我们需要手动模拟一个 notionClient 来让 Martian 获取页面子块
   const notionClient = {
     block: {
       children: {
@@ -85,15 +84,14 @@ async function syncNotion() {
     }
 
     console.log(`Processing: ${slug}`);
-    
-    // 修正部分：现在只用 page.id 调用
+
     const markdownContent = await martian.pageToMarkdown(page.id);
-    
+
     const frontmatter = getFrontmatter(page.properties);
     const fileContent = matter.stringify(markdownContent, frontmatter);
     const filePath = path.join(postsDir, `${slug}.md`);
 
-    fs.writeFileSync(filePath, fileContent);
+    writeFileSync(filePath, fileContent);
     console.log(`Successfully synced: ${slug}.md`);
   }
 
