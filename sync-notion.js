@@ -1,4 +1,4 @@
-// sync-notion.js (v2 - Manual API Call)
+// sync-notion.js (v3 - Final Corrected Version)
 const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
@@ -32,7 +32,7 @@ async function syncNotion() {
     headers: {
       'Authorization': `Bearer ${NOTION_API_KEY}`,
       'Content-Type': 'application/json',
-      'Notion-Version': '2022-06-28', // Notion API 版本
+      'Notion-Version': '2022-06-28',
     },
     body: JSON.stringify({
       filter: {
@@ -57,7 +57,21 @@ async function syncNotion() {
   }
 
   const data = await response.json();
-  const martian = new Martian();
+  
+  // 修正部分：在这里创建 Martian 实例
+  // 我们需要手动模拟一个 notionClient 来让 Martian 获取页面子块
+  const notionClient = {
+    block: {
+      children: {
+        list: ({ block_id }) => {
+          return fetch(`https://api.notion.com/v1/blocks/${block_id}/children`, {
+            headers: { 'Authorization': `Bearer ${NOTION_API_KEY}`, 'Notion-Version': '2022-06-28' }
+          }).then(res => res.json());
+        }
+      }
+    }
+  };
+  const martian = new Martian({ notionClient });
 
   if (!fs.existsSync(postsDir)) {
     fs.mkdirSync(postsDir, { recursive: true });
@@ -72,12 +86,8 @@ async function syncNotion() {
 
     console.log(`Processing: ${slug}`);
     
-    const markdownContent = await martian.pageToMarkdown(page.id, { notionClient: { block: { children: { list: () => {
-        // Martian 需要一个 notionClient 来获取页面子块，我们手动模拟这个功能
-        return fetch(`https://api.notion.com/v1/blocks/${page.id}/children`, {
-            headers: { 'Authorization': `Bearer ${NOTION_API_KEY}`, 'Notion-Version': '2022-06-28' }
-        }).then(res => res.json());
-    }}}});
+    // 修正部分：现在只用 page.id 调用
+    const markdownContent = await martian.pageToMarkdown(page.id);
     
     const frontmatter = getFrontmatter(page.properties);
     const fileContent = matter.stringify(markdownContent, frontmatter);
@@ -92,5 +102,5 @@ async function syncNotion() {
 
 syncNotion().catch(error => {
   console.error("Sync script failed:", error);
-  process.exit(1); // 确保 Action 会因为错误而失败
+  process.exit(1);
 });
