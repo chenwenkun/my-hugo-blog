@@ -29,8 +29,16 @@ jobs:
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         run: node sync-notion.js
 
+      - name: Pull latest changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull origin main --rebase || git pull origin main --allow-unrelated-histories
+
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: Sync content from Notion"
           file_pattern: 'content/**/*.md'
+          push_options: '--force-with-lease'
+          skip_fetch: false
