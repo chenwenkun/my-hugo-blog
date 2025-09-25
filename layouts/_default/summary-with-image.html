@@ -79,15 +79,15 @@
             </div>
             {{ end }}
 
-      <!-- 为了对齐，非第一篇文章添加左侧占位空间 -->
-      {{ if ne .RelPermalink (index $.Site.RegularPages 0).RelPermalink }}
-      <div class="w-100 w-25-ns pr3-ns mb3 mb0-ns">
-        <!-- 空白占位，保持对齐 -->
-      </div>
-      {{ end }}
+            <!-- 为了对齐，非第一篇文章添加左侧占位空间 -->
+            {{ if ne .RelPermalink (index $.Site.RegularPages 0).RelPermalink }}
+            <div class="w-100 w-25-ns pr3-ns mb3 mb0-ns">
+                <!-- 空白占位，保持对齐 -->
+            </div>
+            {{ end }}
 
-      <!-- 右侧内容 -->
-      <div class="w-100 w-75-ns">
+            <!-- 右侧内容 -->
+            <div class="w-100 w-75-ns">
                 <div class="flex flex-column{{ if $featured_image }} flex-row-ns{{ end }}">
                     {{ if $featured_image }}
                     <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
