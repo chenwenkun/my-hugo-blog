@@ -1,0 +1,35 @@
+{{/*
+  Use Hugo's native Table of contents feature. You must set `toc: true` in your parameters for this to show.
+  https://gohugo.io/content-management/toc/
+*/}}
+
+{{- if .Params.toc -}}
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links mb4" style="border-left: 4px solid #357edd;">
+    <p class="f4 b mb3 dark-blue">📋 {{ lang.Translate "whatsInThis" . }}</p>
+    <div id="TableOfContents" style="font-size: 0.9rem;">
+      {{ .TableOfContents }}
+    </div>
+  </div>
+{{- end -}}
+
+{{/*
+  Use Hugo's native related content feature to pull in content that may have similar parameters, like tags. etc.
+  https://gohugo.io/content-management/related/
+*/}}
+
+{{ $related := .Site.RegularPages.Related . | collections.First 15 }}
+
+{{ with $related }}
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">{{ lang.Translate "related" }}</p>
+    <ul class="pa0 list">
+	   {{ range . }}
+	     <li  class="mb2">
+          <a href="{{ .RelPermalink }}">
+            {{- .Title -}}
+          </a>
+        </li>
+	    {{ end }}
+    </ul>
+</div>
+{{ end }}

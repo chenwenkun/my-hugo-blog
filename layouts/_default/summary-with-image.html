@@ -1,0 +1,146 @@
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+<article class="bb b--black-10 mb4" style="border-bottom: 3px solid #357edd !important; padding-bottom: 2rem;">
+    <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+        <div class="flex flex-row-ns">
+
+            <!-- 左侧标签分类 - 只在第一篇文章显示 -->
+            {{ if eq .RelPermalink (index $.Site.RegularPages 0).RelPermalink }}
+            <div class="w-100 w-25-ns pr3-ns mb3 mb0-ns">
+                <div class="toc-preview sticky" style="top: 20px;">
+                    <div class="toc-preview-title">
+                        🏷️ 文章分类
+                    </div>
+                    <div class="toc-preview-content">
+                        <!-- Claude Code 分类 -->
+                        <div class="mb3">
+                            <div class="f6 b mb2 dark-blue">Claude Code</div>
+                            <ul class="pa0 list ml2">
+                                {{ range where $.Site.RegularPages ".Params.tags" "intersect" (slice "Claude Code") }}
+                                <li class="mb1">
+                                    <a href="{{ .RelPermalink }}"
+                                        class="link blue hover-dark-blue f7 {{ if eq .RelPermalink $.RelPermalink }}b{{ end }}">
+                                        {{ .Title }}
+                                    </a>
+                                    <div class="f7 gray">{{ .Date.Format "01-02" }}</div>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+
+                        <!-- 技术分类 -->
+                        <div class="mb3">
+                            <div class="f6 b mb2 dark-blue">技术</div>
+                            <ul class="pa0 list ml2">
+                                {{ range where $.Site.RegularPages ".Params.tags" "intersect" (slice "技术") }}
+                                <li class="mb1">
+                                    <a href="{{ .RelPermalink }}"
+                                        class="link blue hover-dark-blue f7 {{ if eq .RelPermalink $.RelPermalink }}b{{ end }}">
+                                        {{ .Title }}
+                                    </a>
+                                    <div class="f7 gray">{{ .Date.Format "01-02" }}</div>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+
+                        <!-- 开发分类 -->
+                        <div class="mb3">
+                            <div class="f6 b mb2 dark-blue">开发</div>
+                            <ul class="pa0 list ml2">
+                                {{ range where $.Site.RegularPages ".Params.tags" "intersect" (slice "开发") }}
+                                <li class="mb1">
+                                    <a href="{{ .RelPermalink }}"
+                                        class="link blue hover-dark-blue f7 {{ if eq .RelPermalink $.RelPermalink }}b{{ end }}">
+                                        {{ .Title }}
+                                    </a>
+                                    <div class="f7 gray">{{ .Date.Format "01-02" }}</div>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+
+                        <!-- 探索分类 -->
+                        <div class="mb3">
+                            <div class="f6 b mb2 dark-blue">探索</div>
+                            <ul class="pa0 list ml2">
+                                {{ range where $.Site.RegularPages ".Params.tags" "intersect" (slice "探索") }}
+                                <li class="mb1">
+                                    <a href="{{ .RelPermalink }}"
+                                        class="link blue hover-dark-blue f7 {{ if eq .RelPermalink $.RelPermalink }}b{{ end }}">
+                                        {{ .Title }}
+                                    </a>
+                                    <div class="f7 gray">{{ .Date.Format "01-02" }}</div>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+
+      <!-- 为了对齐，非第一篇文章添加左侧占位空间 -->
+      {{ if ne .RelPermalink (index $.Site.RegularPages 0).RelPermalink }}
+      <div class="w-100 w-25-ns pr3-ns mb3 mb0-ns">
+        <!-- 空白占位，保持对齐 -->
+      </div>
+      {{ end }}
+
+      <!-- 右侧内容 -->
+      <div class="w-100 w-75-ns">
+                <div class="flex flex-column{{ if $featured_image }} flex-row-ns{{ end }}">
+                    {{ if $featured_image }}
+                    <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+                        <a href="{{ .RelPermalink }}" class="db grow">
+                            <img src="{{ $featured_image }}" class="img" alt="image from {{ .Title }}">
+                        </a>
+                    </div>
+                    {{ end }}
+
+                    <div class="w-100{{ if $featured_image }} w-60-ns pl3-ns{{ end }}">
+                        <h1 class="f3 fw1 athelas mt0 lh-title">
+                            <a href="{{ .RelPermalink }}" class="color-inherit dim link">
+                                {{ .Title }}
+                            </a>
+                        </h1>
+
+                        <!-- 文章元信息 -->
+                        <div class="f6 mb2">
+                            <time class="fw6 f6 ttu tracked gray">{{ .Date.Format "2006年1月2日" }}</time>
+                            {{ with .Params.author | compare.Default .Site.Params.author }}
+                            <span class="fw6 f6 ttu tracked gray ml2">{{ . }}</span>
+                            {{ end }}
+                            {{ if .Params.show_reading_time | compare.Default .Site.Params.show_reading_time }}
+                            <span class="fw6 f6 ttu tracked gray ml2">{{ lang.Translate "readingTime" .ReadingTime
+                                }}</span>
+                            {{ end }}
+                        </div>
+
+                        <!-- 文章摘要 -->
+                        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                            {{ .Summary }}
+                        </div>
+
+                        <!-- 标签 -->
+                        {{ if .Params.tags }}
+                        <div class="mt2 mb2">
+                            {{ range .Params.tags }}
+                            <span
+                                class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">{{
+                                . }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+
+                        {{ with .Params.author | compare.Default .Site.Params.author }}
+                        <p class="f6 lh-copy mv0">By {{ . }}</p>
+                        {{ end }}
+                        <a href="{{ .RelPermalink }}"
+                            class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">{{
+                            $.Param "read_more_copy" | compare.Default (lang.Translate "readMore") }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

@@ -32,6 +32,18 @@
                                 {{ end }}
                             </div>
 
+                            <!-- 文章目录预览 -->
+                            {{ if .Params.toc }}
+                            <div class="toc-preview">
+                                <div class="toc-preview-title">
+                                    📋 文章目录
+                                </div>
+                                <div class="toc-preview-content">
+                                    {{ .TableOfContents }}
+                                </div>
+                            </div>
+                            {{ end }}
+
                             <!-- 文章摘要 -->
                             <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
                                 {{ if .Summary }}

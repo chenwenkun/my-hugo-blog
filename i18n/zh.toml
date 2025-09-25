@@ -1,0 +1,23 @@
+[whatsInThis]
+other = "文章目录"
+
+[related]
+other = "相关文章"
+
+[readingTime]
+other = "{{ .ReadingTime }}分钟阅读"
+
+[wordCount] 
+other = "{{ .WordCount }}字"
+
+[more]
+other = "更多"
+
+[readMore]
+other = "继续阅读"
+
+[allTitle]
+other = "所有 {{.Title }}"
+
+[recentTitle]
+other = "最近 {{.Title }}"

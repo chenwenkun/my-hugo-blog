@@ -40,6 +40,10 @@ relativeURLs = true   # 使用相对URL，提升本地访问速度
       unsafe = true
     [markup.goldmark.parser]
       wrapStandAloneImageWithinParagraph = false  # 减少图片处理
+  [markup.tableOfContents]
+    startLevel = 1  # 从1级标题开始，包含所有标题层级
+    endLevel = 6    # 支持到6级标题
+    ordered = false
   [markup.highlight]
     # 本地开发使用更快的语法高亮
     style = "github"
