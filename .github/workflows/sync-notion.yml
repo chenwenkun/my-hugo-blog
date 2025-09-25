@@ -14,21 +14,32 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          clean: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Setup Git and pull latest changes first
+      - name: Force clean Git state
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # 强制清理并拉取最新状态
+          # 显示当前状态用于调试
+          echo "Current commit: $(git rev-parse HEAD)"
+          echo "Current branch: $(git branch --show-current)"
+          git status
+          # 强制清理所有状态
           git reset --hard HEAD
-          git clean -fd
-          git fetch origin main
+          git clean -fdx
+          git fetch --all --prune
           git reset --hard origin/main
+          # 验证清理后的状态
+          echo "After cleanup commit: $(git rev-parse HEAD)"
+          git status
 
       - name: Install dependencies
         run: npm install
@@ -40,10 +51,13 @@ jobs:
         run: node sync-notion.js
 
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: Sync content from Notion"
-          file_pattern: 'content/**/*.md'
-          push_options: '--force-with-lease'
-          skip_fetch: true
-          skip_dirty_check: true
+        run: |
+          # 检查是否有更改
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Found changes, committing..."
+            git add content/posts/*.md
+            git commit -m "chore: Sync content from Notion [skip ci]"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
