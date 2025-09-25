@@ -1,0 +1,48 @@
+# 本地开发专用配置 - 最大化本地性能
+# 使用方法: hugo server --config hugo.toml,hugo.dev.toml
+
+baseURL = 'http://localhost:1313'
+
+# 本地开发性能优化
+enableGitInfo = false  # 关闭Git信息查询，大幅提升速度
+enableRobotsTXT = false  # 本地不需要robots.txt
+canonifyURLs = false  # 本地开发不需要规范化URL
+relativeURLs = true   # 使用相对URL，提升本地访问速度
+
+# 本地构建优化
+[build]
+  writeStats = false  # 本地开发时不生成统计信息
+  
+# 本地缓存配置 - 激进缓存策略
+[caches]
+  [caches.getjson]
+    maxAge = "24h"
+  [caches.getcsv] 
+    maxAge = "24h"
+  [caches.images]
+    maxAge = "168h"  # 图片缓存7天
+  [caches.assets]
+    maxAge = "168h"  # 资源文件缓存7天
+  [caches.getresource]
+    maxAge = "24h"
+  [caches.modules]
+    maxAge = "168h"  # 模块缓存7天
+
+# 本地开发参数
+[params]
+  # 本地开发时关闭一些重计算功能
+  show_reading_time = false  # 本地开发时关闭阅读时间计算
+  
+# 本地Markdown处理优化
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false  # 减少图片处理
+  [markup.highlight]
+    # 本地开发使用更快的语法高亮
+    style = "github"
+    lineNos = false  # 本地开发时关闭行号，提升速度
+    lineNumbersInTable = false
+    tabWidth = 2

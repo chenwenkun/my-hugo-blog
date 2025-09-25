@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>我的新博客</title>
+    <title>cwk blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="这是我的个人博客，使用 Hugo 和 Decap CMS 搭建">
+    <meta name="description" content="技术随笔">
     <meta name="generator" content="Hugo 0.150.0">
     
     
     
       <meta name="robots" content="noindex, nofollow">
     
+    <meta name="author" content="chenwenkun">
     
 
     
@@ -31,31 +32,32 @@
 
     
     
-      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="我的新博客" />
-      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="我的新博客" />
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="cwk blog" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="cwk blog" />
       
     
 
     
-      <link rel="canonical" href="http://192.168.159.6:1313/posts/">
+      <link rel="canonical" href="http://localhost:1313/posts/">
     
 
-    <meta property="og:url" content="http://192.168.159.6:1313/posts/">
-  <meta property="og:site_name" content="我的新博客">
+    <meta property="og:url" content="http://localhost:1313/posts/">
+  <meta property="og:site_name" content="cwk blog">
   <meta property="og:title" content="Posts">
-  <meta property="og:description" content="这是我的个人博客，使用 Hugo 和 Decap CMS 搭建">
+  <meta property="og:description" content="技术随笔">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Posts">
-  <meta itemprop="description" content="这是我的个人博客，使用 Hugo 和 Decap CMS 搭建">
-  <meta itemprop="datePublished" content="2025-09-24T17:10:29+08:00">
-  <meta itemprop="dateModified" content="2025-09-24T17:10:29+08:00">
+  <meta itemprop="description" content="技术随笔">
+  <meta itemprop="datePublished" content="2025-09-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-25T00:00:00+00:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Posts">
-  <meta name="twitter:description" content="这是我的个人博客，使用 Hugo 和 Decap CMS 搭建">
+  <meta name="twitter:description" content="技术随笔">
 
-	
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
   </head><body class="ma0 avenir bg-near-white development">
 
     
@@ -66,7 +68,7 @@
   <div class="flex-l center items-center justify-between">
     <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
       
-        我的新博客
+        cwk blog
       
     </a>
     <div class="flex-l items-center">
@@ -91,35 +93,749 @@
 
     <main class="pb7" role="main">
       
-  <article class="pa3 pa4-ns nested-copy-line-height">
+<article class="pa3 pa4-ns nested-copy-line-height">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></section>
-    <section class="flex-ns mt5 flex-wrap justify-around">
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/my-first-post/" class="link black dim">
-        My First Post
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      
-    </div>
-    <a href="/posts/my-first-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
 
+    
+    <section class="flex-ns mt5 flex-wrap justify-around">
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/cc-real-world-application-1/" class="color-inherit dim link">
+                                    Claude Code 在测试开发中的实战应用-1
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <h3 id="图片处理"><strong>图片处理</strong></h3>
+<p>Claude Code支持粘贴图片，可以让Claude根据图片来完成任务，例如：“根据图片设计网页”或“分析错误截图原因”。</p>
+<p>上传后的图片不会直接显示出来，而是会用<code>[Image #id]</code>的占位符替代。</p>
+<p><img src="https://pic2.zhimg.com/v2-90a582d7a9e9b608a3e269135c59927d_1440w.jpg" alt=""></p>
+<h3 id="safe-yolo-模式"><strong>Safe YOLO 模式</strong></h3>
+<p>为了安全起见， Claude Code执行一些命令时默认请求你的同意。为了实现更方便的自动化，你可以设置Safe YOLO模式。</p>
+<p>在启动Claude的时候，执行下面的指令即可：</p>
+<p><code>claude --dangerously-skip-permissions</code></p>
+<p>执行这个之后，Claude 会<strong>自动跳过所有权限确认</strong>，不需要你手动点允许。这对于一些重复性任务十分方便。</p>
+<h2 id="二交互与会话管理"><strong>二、交互与会话管理</strong></h2>
+<h3 id="清除聊天上下文"><strong>清除聊天上下文</strong></h3>
+<p>使用 <code>**/clear**</code> 清除聊天上下文，避免累积过多历史信息影响效率。</p>
+<p><img src="https://picx.zhimg.com/v2-b6fa580659c878dea09c2beed92d7aef_1440w.jpg" alt=""></p>
+<h3 id="快捷键操作"><strong>快捷键操作</strong></h3>
+<ul>
+<li><code>/</code> 查看命令</li>
+<li>方向键翻历史</li>
+<li><code>Tab</code> 补全</li>
+<li><code>Option+Enter</code> 换行</li>
+<li><code>Ctrl+C</code> 退出等。</li>
+</ul>
+<h3 id="中断操作"><strong>中断操作</strong></h3>
+<p>输错指令时，按 <code>ESC</code> 键立即停止 AI 当前任务。</p>
+<p><img src="https://picx.zhimg.com/v2-cf4d6b2ad270d90ee347d953a163b657_1440w.jpg" alt=""></p>
+<h3 id="恢复历史会话"><strong>恢复历史会话</strong></h3>
+<p>在启动的时候，执行<code>claude -c</code>，可以继续上次对话</p>
+<p>执行<code>claude -r</code>，可以选择历史对话继续。如果你已经打开了某个对话，你也可以输入 <code>/resume</code> 来切换到其他会话中。</p>
+<p><img src="https://pica.zhimg.com/v2-1a0378318241d62a5a7517b064ff4d50_1440w.jpg" alt=""></p>
+<h3 id="上下文压缩"><strong>上下文压缩</strong></h3>
+<p>Claude Code提供了<code>/compact</code> ，它的作用是<strong>压缩对话历史</strong>，只保留上下文摘要，从而减少 token 占用。</p>
+<p><img src="https://pica.zhimg.com/v2-1ef6384b697dcf63d8f888c8ec33bdb2_1440w.jpg" alt=""></p>
+<p>这样 Claude 就不会因为上下文太杂而卡壳或跑偏。</p>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">Claude Code</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
-      
-    </section></article>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/cc-real-world-application-2/" class="color-inherit dim link">
+                                    Claude Code 在测试开发中的实战应用-2
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <p>Claude Code 最大的优势是可以结合各种 MCP 工具，通过自然语言直接操作和测试，无需手动编写复杂脚本。以下是实际工作中的应用场景：</p>
+<p>🎯 1. 自然语言驱动的UI自动化测试</p>
+<p>场景：需要测试登录功能，但不想写繁琐的Selenium代码</p>
+<p>Claude Code 操作：</p>
+<pre tabindex="0"><code>我：&#34;帮我测试 https://example.com 的登录功能&#34;
+Claude：直接使用 Playwright MCP 打开浏览器 → 自动填写表单 → 验证登录结果
+无需编写任何测试脚本！
+</code></pre><p>实际价值：传统需要写50行代码，现在一句话搞定。</p>
+<p>📄 2. 智能文件处理和测试数据生成</p>
+<p>场景：需要处理Excel测试用例文件并生成测试数据</p>
+<p>Claude Code 操作：</p>
+<pre tabindex="0"><code>我：&#34;读取这个测试用例.xlsx文件，为每个用例生成0条测试数据&#34;
+Claude：使用 filesystem MCP 读取文件 → 分析用例结构 → 自动生成符合要求的数据集
+直接输出 CSV/JSON 格式！
+</code></pre><p>实际价值：手动处理需要半天，现在 2 分钟完成。</p>
+<p>📊 3. 实时数据库查询和验证</p>
+<p>场景：测试后需要验证数据库中的数据是否正确</p>
+<p>Claude Code 操作：</p>
+<pre tabindex="0"><code>我：&#34;检查用户 ID 12345 的订单数据是否正确写入数据库&#34;
+Claude：使用 MySQL MCP 直接查询 → 分析数据完整性 → 生成验证报告
+无需写 SQL 语句！
+</code></pre><p>实际价值：传统需要写复杂SQL和验证逻辑，现在直接描述需求即可。</p>
+<p>🌍 4. 多环境接口测试自动化</p>
+                                
+                                <div class="mt3">
+                                    <a href="/posts/cc-real-world-application-2/"
+                                        class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">阅读全文
+                                        →</a>
+                                </div>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">Claude Code</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/-cc-installation-debugging/" class="color-inherit dim link">
+                                    Claude Code 安装与调试
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <h1 id="claude-code-安装教程">Claude Code 安装教程</h1>
+<p>Claude Code 是 Anthropic 推出的 AI 编程助手，支持通过命令行帮助开发者生成、调试和维护代码。以下教程详细介绍了如何在 macOS、Linux（Ubuntu/Debian）和 Windows（通过 WSL）系统上安装和配置 Claude Code。</p>
+<hr>
+<h2 id="系统要求">系统要求</h2>
+<ul>
+<li>操作系统：macOS 10.15 及以上，Ubuntu 20.04+/Debian 10+，Windows 10 及以上（需启用 WSL）</li>
+<li>Node.js：版本 18 或更高（需含 npm）</li>
+<li>互联网连接</li>
+<li>推荐内存至少 4GB</li>
+</ul>
+<hr>
+<h2 id="步骤-1安装-nodejs-和-npm">步骤 1：安装 Node.js 和 npm</h2>
+<ul>
+<li>macOS 用户（推荐使用 Homebrew）：</li>
+<li>Ubuntu/Debian 用户：</li>
+<li>Windows 用户（需安装 WSL）：</li>
+<li>验证安装是否成功：</li>
+</ul>
+<hr>
+<h2 id="步骤-2安装-claude-code">步骤 2：安装 Claude Code</h2>
+<p>打开终端（macOS/Linux）或 WSL 终端（Windows），执行：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g @anthropic-ai/claude-code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>说明：此命令会全局安装 Claude Code。</p></blockquote>
+<ul>
+<li>如果遇到权限问题，请检查 npm 配置（运行 <code>npm config get prefix</code>），确保安装路径非系统目录。</li>
+<li>Windows WSL 用户若检测到操作系统异常，建议参考官方文档配置。</li>
+</ul>
+<hr>
+<h2 id="步骤-3验证安装">步骤 3：验证安装</h2>
+<p>使用以下命令检查 Claude Code 是否安装成功：</p>
+                                
+                                <div class="mt3">
+                                    <a href="/posts/-cc-installation-debugging/"
+                                        class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">阅读全文
+                                        →</a>
+                                </div>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">Claude Code</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/ios-wda-install/" class="color-inherit dim link">
+                                    iOS WDA作为App独立运行
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <p>测试系统 16.6 运行闪退</p>
+<p>18.3 18.4系统正常安装</p>
+<p>代码地址：</p>
+<p>本来是 facebook 的项目，目前由 appium 进行维护</p>
+<p>代码下载</p>
+<p>先在xcode 构建一次，修改Bundle Identifier，勾选自己的 appleid</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/c205fb54-92b2-4987-8be3-972b67d27acc/cb756a73-27bc-4b0d-951a-858df3344b59/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB466TMS5RQ2U%2F20250925%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20250925T074547Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIBgR7QcehSFASVGbj6BMlPK6cLQVQT7RQHFcxjnXjhuXAiAvzA63K3NXuHePmB754TIr%2BgQgYpLLfVM3Yh9irsN0vCr%2FAwhtEAAaDDYzNzQyMzE4MzgwNSIMMYtnv0wSY8IgE6fFKtwDpeFxRqIkM19TH4xdCoRpfrdwDSAt7O5olVKmTLL3bUR7o4EP9g17qGRZq23yeLBLVFEfiUzk%2F9caTpo%2FnywUtp%2Bm3sedIs6Y2zELe9pS9%2BiqTp3zXD7Y%2BiUDo9JkRNW3%2FSfTO9wZKDiHT%2BAcn3Dde6eDyNIjs720vOwNKu6rGLdkW4uxeDUkrbmpc9pgn6yQH0RRKEPl12ztxqd62n0lilv5C2QVCDBa7ofEOWddfmKvClUvOrzL%2B4g8MuPSYIEIaxcMQLp%2Btq6TXsT9tTB6dyUaCVEC4yTWSu%2FBxLMsb2HqaaKPG7EfhZgd6rpc8eX%2Bo3Sd61JzIWmkc7HV3ccxDR4v1Sl%2BzvQ6BVlDY%2FekCFAFfCa243MjSMtF1xcKq1OQfiMwkeiFS9ffGz6flv9AfLxhqYLN2P3MGuDN0gkna1mq7%2BoJFDiJqxaQjDLH7idXVkFxsJWwCb9skMN%2F6eULd2N96kFd1qQ7F8XF2YQazMFmK%2B6BEQNrIPH%2BobKBe1jdzKeLGGU73stzAY6wQ45%2BroweaEuwuzh3CI47TNyf42MeSvm0y8WMOPB7H6JyjKgnSn8y%2FqSAac%2BZhGwITZkOKug93A3DhjuXCANRi3nYz2rEhQVJNa1CvysqMbowx4HTxgY6pgEqtoZnDxbmM0SOzZRojc4E3Vp5s8Coxu6rrGCTxBLp%2FWah8KM4eKhdpYy3vlkIhx3NOmnnJofgHsPFWZCwn%2FLbWD%2FyS2qkIiu1gLhAjaWJ4xdGyIXWMNcewqqe0%2Bxt%2FZDC23wPuIqtp2sb2QGVm5d5chnab7%2B47%2BeUaSg8QI3O1myovZ9zhYoKS%2BL8%2FbUVnELkQoePWrKeFZQFxPYGYKR9FKFwrv%2Bx&amp;X-Amz-Signature=169866720fdb524105a73b1839456a972dc93c7e4f42c3645dbac5713b213f8b&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject" alt=""></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6639ba">cd</span> /Users/chenwenkun/Downloads/androidandios/iosui/WebDriverAgent/WebDriverAgent
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 使用xcodebuild构建WebDriverAgentRunner用于测试</span>
+</span></span><span style="display:flex;"><span>$ xcodebuild build-for-testing -scheme WebDriverAgentRunner -sdk iphoneos -configuration Release -derivedDataPath /tmp/derivedDataPath
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>xcodebuild build-for-testing -scheme WebDriverAgentRunner -sdk iphoneos -configuration Release -derivedDataPath /tmp/derivedDataPath -arch arm64
+</span></span><span style="display:flex;"><span><span style="color:#953800">ARCHS</span><span style="color:#0550ae">=</span>arm64
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 导航到生成的构建目录</span>
+</span></span><span style="display:flex;"><span>$ <span style="color:#6639ba">cd</span> /tmp/derivedDataPath
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 进入Release-iphoneos目录（注意：实际路径可能因环境而异）</span>
+</span></span><span style="display:flex;"><span>$ <span style="color:#6639ba">cd</span> Build/Products/Release-iphoneos
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 创建iOS应用程序打包所需的Payload文件夹结构</span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 创建Payload文件夹并将.app文件复制到其中</span>
+</span></span><span style="display:flex;"><span>$ mkdir Payload <span style="color:#0550ae">&amp;&amp;</span> cp -r *.app Payload
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 将Payload文件夹压缩为zip文件，然后将扩展名更改为.ipa</span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># .ipa文件是iOS应用程序的标准分发格式</span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 可以使用zip命令进行压缩：zip -r MyApp.ipa Payload</span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 或者也可以通过文件管理器进行压缩，然后手动更改扩展名</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后：进入到目录 <code>WebDriverAgentRunner-Runner.app/Frameworks</code> 把XC开头的文件全部删掉</p>
+                                
+                                <div class="mt3">
+                                    <a href="/posts/ios-wda-install/"
+                                        class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">阅读全文
+                                        →</a>
+                                </div>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">技术</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/warp-ssh/" class="color-inherit dim link">
+                                    warp连接服务器
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <p>1、建一个workflows，通过expect，写一个脚本，保存为 xxx,</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a">#!/usr/bin/expect
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">set</span> timeout <span style="color:#0550ae">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">set</span> hostname <span style="color:#0a3069">&#34;your_hostname_or_ip&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">set</span> username <span style="color:#0a3069">&#34;your_username&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">set</span> password <span style="color:#0a3069">&#34;your_password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>spawn ssh <span style="color:#953800">$username</span>@<span style="color:#953800">$hostname</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>expect <span style="color:#0a3069">&#34;assword:&#34;</span>
+</span></span><span style="display:flex;"><span>send <span style="color:#0a3069">&#34;</span><span style="color:#953800">$password</span><span style="color:#0a3069">\r&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>interact
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod +x 文件.exp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>放在 workflow 运行就好了</p>
+                                
+                                <div class="mt3">
+                                    <a href="/posts/warp-ssh/"
+                                        class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">阅读全文
+                                        →</a>
+                                </div>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">技术</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/what-is-cc/" class="color-inherit dim link">
+                                    什么是 Claude Code 
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">3 minutes read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <h2 id="-核心理念可以奏效的简单方案the-simple-thing-that-works">💡 核心理念：可以奏效的简单方案（The Simple Thing That Works）</h2>
+<p>正如 Anthropic 内部所信奉的，<strong>“可以奏效的简单方案”</strong>（The Simple Thing That Works）是 <strong>Claude Code</strong> 成功的基石。这意味着他们砍掉了许多非必要的流程消耗，让 Claude Code 成为了一个<strong>纯粹、简单、且专心致志</strong>为你干活的 <strong>AI 智能体（AI Agent）</strong>。它没有多余的“心眼子”，只专注于交付结果。</p>
+<hr>
+<h3 id="-claude-code-制胜的秘密武器ai-智能体的三大核心要素">🚀 Claude Code 制胜的秘密武器：AI 智能体的三大核心要素</h3>
+<p>为什么 Claude Code 如此简单高效？作为一个成功的 AI 智能体，它的制胜秘诀在于一个精妙的<strong>循环执行机制</strong>，而这个机制建立在三个核心要素之上：</p>
+<ol>
+<li><strong>明确的指令（Instructions）：</strong> 有了清晰的目标，智能体就知道该往哪里走。</li>
+<li><strong>强大的工具集（Powerful Tools）：</strong> 它装备了终端高手钟爱的工具，例如编辑/创建文件、使用 CLI（命令行接口）或 MCP 工具、提交 Git commit 等。</li>
+<li><strong>循环执行机制（Loop）：</strong> 模型会根据指令，在一个循环中<strong>持续调用工具</strong>，直到它能够<strong>自主判断</strong>任务已经圆满完成。</li>
+</ol>
+<hr>
+<h3 id="-独特的代码理解方式像新人入职一样探索项目">🧠 独特的代码理解方式：像新人入职一样探索项目</h3>
+<p>与许多依赖预先索引或 <strong>RAG（检索增强生成）</strong> 的传统编程 AI 工具不同，Claude Code 在理解一个庞大的代码库时，采用了更像人类的方式——它不依赖任何索引。</p>
+<p>它的工作方式更像是一个<strong>新人加入团队后熟悉项目的过程</strong>，我们称之为**“智能体式搜索”**：</p>
+<ul>
+<li>它会使用 <code>glob</code>、<code>grep</code>、<code>find</code> 等命令在代码库中<strong>穿梭和探索</strong>。</li>
+<li>它通过阅读文件、理解项目结构和逻辑，<strong>逐步构建</strong>起对整个代码库的认知。</li>
+<li>这意味着它可以进行一次搜索，根据结果判断：“等等，我可能还需要了解另外几件事。” 进而执行更多的搜索，这种<strong>迭代式探索</strong>让它能更深入、更灵活地理解项目上下文。</li>
+</ul>
+<hr>
+<h3 id="-完善的辅助系统安全透明与灵活性的保障">🛡️ 完善的辅助系统：安全、透明与灵活性的保障</h3>
+<p>在这个高效的核心智能体之上，Anthropic 还构建了一套关键的辅助系统，确保了其<strong>安全性和可用性</strong>：</p>
+<ul>
+<li><strong>轻量级用户界面：</strong> 让你能<strong>实时观察</strong> Claude Code 的工作过程，一切尽在掌握。</li>
+<li><strong>权限系统（Safety Check）：</strong></li>
+<li><strong>高安全性与灵活性：</strong> Claude Code 只是在模型之上的一个轻量级封装。因此，你可以轻松地将其指向通过 AWS、GCP 等云服务商提供的 Claude 模型，从而满足各种<strong>不同的安全与合规需求</strong>。</li>
+</ul>
+<h3 id="-claude-code-使用入门claudemd-文件的重要性">📖 Claude Code 使用入门：CLAUDE.md 文件的重要性</h3>
+<p>如果你想开始使用 Claude Code，CLAUDE.md 文件是你的必经之路。</p>
+                                
+                                <div class="mt3">
+                                    <a href="/posts/what-is-cc/"
+                                        class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">阅读全文
+                                        →</a>
+                                </div>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">Claude Code</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/android-networking/" class="color-inherit dim link">
+                                    屏蔽国产内置安卓某些系统应用联网权限
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <p>众所周知，某些国产安卓自带的程序没法关掉联网权限</p>
+<p>目前通过 vpn 软件来进行实现</p>
+<p>vivo 手机的的全局搜索这个，天天调用一个百度的搜索结果看的很烦，加上规则</p>
+<p>[Rule]</p>
+<p>PROCESS-NAME,com.vivo.globalsearch,REJECT，这样可以完全屏蔽这个 app 的联网权限了</p>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">技术</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/synology-https/" class="color-inherit dim link">
+                                    群晖 7.X配置动态 ddns 和 https证书
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <p>1、腾讯云注册一个域名，需要实名模板，等待审核，购买完成</p>
+<p>2、需要一个公网 ip-群晖控制面板-外部网络-ddns 中选择腾讯云，找到腾讯云上的两个 key 填入，和自己的域名</p>
+<p>3、选择最后面的配置证书，会在腾讯云自动获取到，证书审核通过之后会在群晖自己出现，然后再配置端口就完成了 https 访问</p>
+<p>另外可以通过 docker 实现阿里云的 ddns 配置、也可以通过 ssh 实现 cloudflare 的 ddns 配置，因为实现方式比较简单。</p>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">群晖</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/chrome-plugin-development/" class="color-inherit dim link">
+                                    谷歌浏览器插件类测试工具
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月25日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <p>1、页面强制刷新器，包括两个刷新功能</p>
+<p>强制刷新和清除缓存的强杀功能</p>
+<p>2、测试、预发、正式环境表示器</p>
+<p>标识 tab 页面的三个状态测试不容易搞错</p>
+<p>3、禅道测试用例支持 shift+批量选择插件</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/c205fb54-92b2-4987-8be3-972b67d27acc/7ca8990d-2ef0-4ad6-8256-c807dbb8b3d5/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB466VLPYPXO3%2F20250925%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20250925T074547Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCUeErHhRX99w6mElHodu5BL8%2B4Lducp11bClaShMIafgIgfYroa83PewdqVIoUhABhdjEdxuxshWljyaFESIuU9%2FIq%2FwMIbRAAGgw2Mzc0MjMxODM4MDUiDOT0%2Fcrl11L9YVXAcircA5dqyIu8KzvAFz%2FCENb1Zc0xz%2BQS8BoAJhUGzmBynmoF4kiCRFc4MGxa3CtQPqAIr43eyZqjUSKA73iU9cgjuGSG8wX%2B1Inly6fLdnfNIz9uIJdXdCP74iQsspQ1SxKrA8oldJCCLx66iulWBfN8P92%2FoIcWicnjRfUie3ZmrjEVVg04hZ4fqdZZ0kg219dbBDRb2dANGWhGT3SIrVPScrnLwfGBT2SXq5Aw%2BTpi%2F%2FAdzXvEpRJ8WG%2FsBwYz24BUbCH%2BTdSJWV8C%2BuDgLtbVGaOlVLKWMMzZZCE6j9XW%2BAVdjzMpO83gAD3yhTWdB5AekpHDjWDgKNQ6eMDirIRzIpD7OMqsJ3oFDX0w68cLXnxuJHCQzAHGjlilVdUR2X3y6NzK7oIu5u0Ns2f3n9xhq22W9hIuyT4HR6zuY4Dk6jMg4iQU6NlNyz%2BeW5ibIisRpm2erEaaO6gm09L2hOffVJIXaGVthqS%2BGtpi6%2BIEkNFXguDXt9zKOzUbV2OtVNUNCgAtyDwOK4gbaBFpfSWYlTXV86BRNVy4U5NstokjKYpVcutNWL3qcsLeGDrbNZyfD9V%2F8DnrH2hfiqDHZzkHlV8hKnaQ3zbdzc6V9WTSBey01nDBnvzXnvx5MC4ZMN780sYGOqUBjAg%2BFIlKvLlw59FjHZyedwf6xhMFUMe6S0nfaZWUnJjhd9ZC3ozBjDClxZ0Mv0EM6Srd2OuLZrmghkuZh75RaadHMU8WU%2BKWOQHDgXZJYLdtuBx9w7fC7HXUiwRZsXo8B99BIA210T4RZAZLkAxKA2KfHN3nf20GkC1Rz%2FKTWABI5uMs%2FFzO763qJuniej13fStOCpv7j5m6sJresD1RnuUrpOIt&amp;X-Amz-Signature=c8ecb626ee7974a23d0a2627723ad88f8413fd46bea2a95fb6ce7b018b6d6654&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject" alt=""></p>
+<p>4、禅道测试单自动获取对应字段批量建对应的测试单</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/c205fb54-92b2-4987-8be3-972b67d27acc/1ea39b01-dd1c-4a56-bb09-4fe87447f5c7/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB466VLPYPXO3%2F20250925%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20250925T074547Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCUeErHhRX99w6mElHodu5BL8%2B4Lducp11bClaShMIafgIgfYroa83PewdqVIoUhABhdjEdxuxshWljyaFESIuU9%2FIq%2FwMIbRAAGgw2Mzc0MjMxODM4MDUiDOT0%2Fcrl11L9YVXAcircA5dqyIu8KzvAFz%2FCENb1Zc0xz%2BQS8BoAJhUGzmBynmoF4kiCRFc4MGxa3CtQPqAIr43eyZqjUSKA73iU9cgjuGSG8wX%2B1Inly6fLdnfNIz9uIJdXdCP74iQsspQ1SxKrA8oldJCCLx66iulWBfN8P92%2FoIcWicnjRfUie3ZmrjEVVg04hZ4fqdZZ0kg219dbBDRb2dANGWhGT3SIrVPScrnLwfGBT2SXq5Aw%2BTpi%2F%2FAdzXvEpRJ8WG%2FsBwYz24BUbCH%2BTdSJWV8C%2BuDgLtbVGaOlVLKWMMzZZCE6j9XW%2BAVdjzMpO83gAD3yhTWdB5AekpHDjWDgKNQ6eMDirIRzIpD7OMqsJ3oFDX0w68cLXnxuJHCQzAHGjlilVdUR2X3y6NzK7oIu5u0Ns2f3n9xhq22W9hIuyT4HR6zuY4Dk6jMg4iQU6NlNyz%2BeW5ibIisRpm2erEaaO6gm09L2hOffVJIXaGVthqS%2BGtpi6%2BIEkNFXguDXt9zKOzUbV2OtVNUNCgAtyDwOK4gbaBFpfSWYlTXV86BRNVy4U5NstokjKYpVcutNWL3qcsLeGDrbNZyfD9V%2F8DnrH2hfiqDHZzkHlV8hKnaQ3zbdzc6V9WTSBey01nDBnvzXnvx5MC4ZMN780sYGOqUBjAg%2BFIlKvLlw59FjHZyedwf6xhMFUMe6S0nfaZWUnJjhd9ZC3ozBjDClxZ0Mv0EM6Srd2OuLZrmghkuZh75RaadHMU8WU%2BKWOQHDgXZJYLdtuBx9w7fC7HXUiwRZsXo8B99BIA210T4RZAZLkAxKA2KfHN3nf20GkC1Rz%2FKTWABI5uMs%2FFzO763qJuniej13fStOCpv7j5m6sJresD1RnuUrpOIt&amp;X-Amz-Signature=4039075e7374d6bea2bc65b79343555b3108c475eff9036dfbf0e7ccf882526f&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject" alt=""></p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/c205fb54-92b2-4987-8be3-972b67d27acc/fa727f1d-546c-42aa-9508-d8d3d1275bcd/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB466VLPYPXO3%2F20250925%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20250925T074547Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCUeErHhRX99w6mElHodu5BL8%2B4Lducp11bClaShMIafgIgfYroa83PewdqVIoUhABhdjEdxuxshWljyaFESIuU9%2FIq%2FwMIbRAAGgw2Mzc0MjMxODM4MDUiDOT0%2Fcrl11L9YVXAcircA5dqyIu8KzvAFz%2FCENb1Zc0xz%2BQS8BoAJhUGzmBynmoF4kiCRFc4MGxa3CtQPqAIr43eyZqjUSKA73iU9cgjuGSG8wX%2B1Inly6fLdnfNIz9uIJdXdCP74iQsspQ1SxKrA8oldJCCLx66iulWBfN8P92%2FoIcWicnjRfUie3ZmrjEVVg04hZ4fqdZZ0kg219dbBDRb2dANGWhGT3SIrVPScrnLwfGBT2SXq5Aw%2BTpi%2F%2FAdzXvEpRJ8WG%2FsBwYz24BUbCH%2BTdSJWV8C%2BuDgLtbVGaOlVLKWMMzZZCE6j9XW%2BAVdjzMpO83gAD3yhTWdB5AekpHDjWDgKNQ6eMDirIRzIpD7OMqsJ3oFDX0w68cLXnxuJHCQzAHGjlilVdUR2X3y6NzK7oIu5u0Ns2f3n9xhq22W9hIuyT4HR6zuY4Dk6jMg4iQU6NlNyz%2BeW5ibIisRpm2erEaaO6gm09L2hOffVJIXaGVthqS%2BGtpi6%2BIEkNFXguDXt9zKOzUbV2OtVNUNCgAtyDwOK4gbaBFpfSWYlTXV86BRNVy4U5NstokjKYpVcutNWL3qcsLeGDrbNZyfD9V%2F8DnrH2hfiqDHZzkHlV8hKnaQ3zbdzc6V9WTSBey01nDBnvzXnvx5MC4ZMN780sYGOqUBjAg%2BFIlKvLlw59FjHZyedwf6xhMFUMe6S0nfaZWUnJjhd9ZC3ozBjDClxZ0Mv0EM6Srd2OuLZrmghkuZh75RaadHMU8WU%2BKWOQHDgXZJYLdtuBx9w7fC7HXUiwRZsXo8B99BIA210T4RZAZLkAxKA2KfHN3nf20GkC1Rz%2FKTWABI5uMs%2FFzO763qJuniej13fStOCpv7j5m6sJresD1RnuUrpOIt&amp;X-Amz-Signature=9434994d32acfa09b2d93dd35e32f419a76211a9ae01707e9ffbf0d3b5a7a4a6&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject" alt=""></p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/c205fb54-92b2-4987-8be3-972b67d27acc/2a374ca8-3be3-4978-8ee1-2331f1db0267/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB466VLPYPXO3%2F20250925%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20250925T074547Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCUeErHhRX99w6mElHodu5BL8%2B4Lducp11bClaShMIafgIgfYroa83PewdqVIoUhABhdjEdxuxshWljyaFESIuU9%2FIq%2FwMIbRAAGgw2Mzc0MjMxODM4MDUiDOT0%2Fcrl11L9YVXAcircA5dqyIu8KzvAFz%2FCENb1Zc0xz%2BQS8BoAJhUGzmBynmoF4kiCRFc4MGxa3CtQPqAIr43eyZqjUSKA73iU9cgjuGSG8wX%2B1Inly6fLdnfNIz9uIJdXdCP74iQsspQ1SxKrA8oldJCCLx66iulWBfN8P92%2FoIcWicnjRfUie3ZmrjEVVg04hZ4fqdZZ0kg219dbBDRb2dANGWhGT3SIrVPScrnLwfGBT2SXq5Aw%2BTpi%2F%2FAdzXvEpRJ8WG%2FsBwYz24BUbCH%2BTdSJWV8C%2BuDgLtbVGaOlVLKWMMzZZCE6j9XW%2BAVdjzMpO83gAD3yhTWdB5AekpHDjWDgKNQ6eMDirIRzIpD7OMqsJ3oFDX0w68cLXnxuJHCQzAHGjlilVdUR2X3y6NzK7oIu5u0Ns2f3n9xhq22W9hIuyT4HR6zuY4Dk6jMg4iQU6NlNyz%2BeW5ibIisRpm2erEaaO6gm09L2hOffVJIXaGVthqS%2BGtpi6%2BIEkNFXguDXt9zKOzUbV2OtVNUNCgAtyDwOK4gbaBFpfSWYlTXV86BRNVy4U5NstokjKYpVcutNWL3qcsLeGDrbNZyfD9V%2F8DnrH2hfiqDHZzkHlV8hKnaQ3zbdzc6V9WTSBey01nDBnvzXnvx5MC4ZMN780sYGOqUBjAg%2BFIlKvLlw59FjHZyedwf6xhMFUMe6S0nfaZWUnJjhd9ZC3ozBjDClxZ0Mv0EM6Srd2OuLZrmghkuZh75RaadHMU8WU%2BKWOQHDgXZJYLdtuBx9w7fC7HXUiwRZsXo8B99BIA210T4RZAZLkAxKA2KfHN3nf20GkC1Rz%2FKTWABI5uMs%2FFzO763qJuniej13fStOCpv7j5m6sJresD1RnuUrpOIt&amp;X-Amz-Signature=9014f014c040b32261d74f5e722644806fa9d015e30123bc50ecdc69935831ae&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject" alt=""></p>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">开发</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="/posts/my-first-blog/" class="color-inherit dim link">
+                                    Cloudflare改变邮箱的收件邮箱地址
+                                </a>
+                            </h1>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">2025年9月24日</time>
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">chenwenkun</span>
+                                
+                                
+                                <span class="fw6 f6 ttu tracked gray ml2">One minute read</span>
+                                
+                            </div>
+
+                            
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                
+                                <h1 id="配置域名邮箱">配置域名邮箱</h1>
+<ul>
+<li>注册一个的域名，最好是腾讯云或者阿里云</li>
+<li>注册<strong>Cloudflare,</strong><a href="https://dash.cloudflare.com/login">https://dash.cloudflare.com/login</a>，注册之后进行站点添加</li>
+<li>配置好该域名的dns，阿里云或者腾讯云上面将DNS替换成<strong>Cloudflare给的</strong></li>
+<li>直到<strong>Cloudflare显示域名为有效的，进入该域名配置出地址邮件-路由输入-创建地址</strong></li>
+<li>自定义地址+验证邮箱可以配置完全</li>
+</ul>
+                                
+                                
+                            </div>
+
+                            
+                            
+                            <div class="mt3">
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">技术</span>
+                                
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">探索</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+    </section>
+
+    </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://192.168.159.6:1313/" >
-    &copy;  我的新博客 2025 
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  cwk blog 2025 
   </a>
     <div><div class="ananke-socials"></div>
 </div>

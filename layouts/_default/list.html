@@ -1,0 +1,77 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param " text_color" |
+        compare.Default "mid-gray" }}">
+        {{- .Content -}}
+    </section>
+
+    <!-- 文章列表 -->
+    <section class="flex-ns mt5 flex-wrap justify-around">
+        {{ range .Paginator.Pages }}
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <article class="bb b--black-10">
+                <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+                    <div class="flex flex-column flex-row-ns">
+                        <!-- 文章内容 -->
+                        <div class="w-100">
+                            <h1 class="f3 fw1 athelas mt0 lh-title">
+                                <a href="{{ .RelPermalink }}" class="color-inherit dim link">
+                                    {{ .Title }}
+                                </a>
+                            </h1>
+
+                            <!-- 文章元信息 -->
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+                                <time class="fw6 f6 ttu tracked gray">{{ .Date.Format "2006年1月2日" }}</time>
+                                {{ with .Params.author | compare.Default .Site.Params.author }}
+                                <span class="fw6 f6 ttu tracked gray ml2">{{ . }}</span>
+                                {{ end }}
+                                {{ if .Params.show_reading_time | compare.Default .Site.Params.show_reading_time }}
+                                <span class="fw6 f6 ttu tracked gray ml2">{{ lang.Translate "readingTime" .ReadingTime
+                                    }}</span>
+                                {{ end }}
+                            </div>
+
+                            <!-- 文章摘要 -->
+                            <div class="f6 f5-l lh-copy nested-copy-line-height nested-links mid-gray">
+                                {{ if .Summary }}
+                                {{ .Summary }}
+                                {{ if .Truncated }}
+                                <div class="mt3">
+                                    <a href="{{ .RelPermalink }}"
+                                        class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">阅读全文
+                                        →</a>
+                                </div>
+                                {{ end }}
+                                {{ else }}
+                                <p>{{ .Description | compare.Default "点击阅读全文..." }}</p>
+                                <div class="mt3">
+                                    <a href="{{ .RelPermalink }}"
+                                        class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">阅读全文
+                                        →</a>
+                                </div>
+                                {{ end }}
+                            </div>
+
+                            <!-- 标签 -->
+                            {{ if .Params.tags }}
+                            <div class="mt3">
+                                {{ range .Params.tags }}
+                                <span
+                                    class="ba b--light-gray bg-near-white br2 color-inherit dib f7 hover-bg-light-gray link mr2 mt1 ph2 pv1">{{
+                                    . }}</span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {{ end }}
+    </section>
+
+    <!-- 分页导航 -->
+    {{- template "_internal/pagination.html" . -}}
+</article>
+{{ end }}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Claude Code 在测试开发中的实战应用-1 | cwk blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="图片处理
+Claude Code支持粘贴图片，可以让Claude根据图片来完成任务，例如：“根据图片设计网页”或“分析错误截图原因”。
+上传后的图片不会直接显示出来，而是会用[Image #id]的占位符替代。
+
+Safe YOLO 模式
+为了安全起见， Claude Code执行一些命令时默认请求你的同意。为了实现更方便的自动化，你可以设置Safe YOLO模式。
+在启动Claude的时候，执行下面的指令即可：
+claude --dangerously-skip-permissions
+执行这个之后，Claude 会自动跳过所有权限确认，不需要你手动点允许。这对于一些重复性任务十分方便。
+二、交互与会话管理
+清除聊天上下文
+使用 **/clear** 清除聊天上下文，避免累积过多历史信息影响效率。
+
+快捷键操作
+
+/ 查看命令
+方向键翻历史
+Tab 补全
+Option&#43;Enter 换行
+Ctrl&#43;C 退出等。
+
+中断操作
+输错指令时，按 ESC 键立即停止 AI 当前任务。
+
+恢复历史会话
+在启动的时候，执行claude -c，可以继续上次对话
+执行claude -r，可以选择历史对话继续。如果你已经打开了某个对话，你也可以输入 /resume 来切换到其他会话中。
+
+上下文压缩
+Claude Code提供了/compact ，它的作用是压缩对话历史，只保留上下文摘要，从而减少 token 占用。
+
+这样 Claude 就不会因为上下文太杂而卡壳或跑偏。">
+    <meta name="generator" content="Hugo 0.150.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="author" content="chenwenkun">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/cc-real-world-application-1/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/cc-real-world-application-1/">
+  <meta property="og:site_name" content="cwk blog">
+  <meta property="og:title" content="Claude Code 在测试开发中的实战应用-1">
+  <meta property="og:description" content="图片处理 Claude Code支持粘贴图片，可以让Claude根据图片来完成任务，例如：“根据图片设计网页”或“分析错误截图原因”。
+上传后的图片不会直接显示出来，而是会用[Image #id]的占位符替代。
+Safe YOLO 模式 为了安全起见， Claude Code执行一些命令时默认请求你的同意。为了实现更方便的自动化，你可以设置Safe YOLO模式。
+在启动Claude的时候，执行下面的指令即可：
+claude --dangerously-skip-permissions
+执行这个之后，Claude 会自动跳过所有权限确认，不需要你手动点允许。这对于一些重复性任务十分方便。
+二、交互与会话管理 清除聊天上下文 使用 **/clear** 清除聊天上下文，避免累积过多历史信息影响效率。
+快捷键操作 / 查看命令 方向键翻历史 Tab 补全 Option&#43;Enter 换行 Ctrl&#43;C 退出等。 中断操作 输错指令时，按 ESC 键立即停止 AI 当前任务。
+恢复历史会话 在启动的时候，执行claude -c，可以继续上次对话
+执行claude -r，可以选择历史对话继续。如果你已经打开了某个对话，你也可以输入 /resume 来切换到其他会话中。
+上下文压缩 Claude Code提供了/compact ，它的作用是压缩对话历史，只保留上下文摘要，从而减少 token 占用。
+这样 Claude 就不会因为上下文太杂而卡壳或跑偏。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-25T00:00:00+00:00">
+    <meta property="article:tag" content="Claude Code">
+
+  <meta itemprop="name" content="Claude Code 在测试开发中的实战应用-1">
+  <meta itemprop="description" content="图片处理 Claude Code支持粘贴图片，可以让Claude根据图片来完成任务，例如：“根据图片设计网页”或“分析错误截图原因”。
+上传后的图片不会直接显示出来，而是会用[Image #id]的占位符替代。
+Safe YOLO 模式 为了安全起见， Claude Code执行一些命令时默认请求你的同意。为了实现更方便的自动化，你可以设置Safe YOLO模式。
+在启动Claude的时候，执行下面的指令即可：
+claude --dangerously-skip-permissions
+执行这个之后，Claude 会自动跳过所有权限确认，不需要你手动点允许。这对于一些重复性任务十分方便。
+二、交互与会话管理 清除聊天上下文 使用 **/clear** 清除聊天上下文，避免累积过多历史信息影响效率。
+快捷键操作 / 查看命令 方向键翻历史 Tab 补全 Option&#43;Enter 换行 Ctrl&#43;C 退出等。 中断操作 输错指令时，按 ESC 键立即停止 AI 当前任务。
+恢复历史会话 在启动的时候，执行claude -c，可以继续上次对话
+执行claude -r，可以选择历史对话继续。如果你已经打开了某个对话，你也可以输入 /resume 来切换到其他会话中。
+上下文压缩 Claude Code提供了/compact ，它的作用是压缩对话历史，只保留上下文摘要，从而减少 token 占用。
+这样 Claude 就不会因为上下文太杂而卡壳或跑偏。">
+  <meta itemprop="datePublished" content="2025-09-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="54">
+  <meta itemprop="keywords" content="Claude Code">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Claude Code 在测试开发中的实战应用-1">
+  <meta name="twitter:description" content="图片处理 Claude Code支持粘贴图片，可以让Claude根据图片来完成任务，例如：“根据图片设计网页”或“分析错误截图原因”。
+上传后的图片不会直接显示出来，而是会用[Image #id]的占位符替代。
+Safe YOLO 模式 为了安全起见， Claude Code执行一些命令时默认请求你的同意。为了实现更方便的自动化，你可以设置Safe YOLO模式。
+在启动Claude的时候，执行下面的指令即可：
+claude --dangerously-skip-permissions
+执行这个之后，Claude 会自动跳过所有权限确认，不需要你手动点允许。这对于一些重复性任务十分方便。
+二、交互与会话管理 清除聊天上下文 使用 **/clear** 清除聊天上下文，避免累积过多历史信息影响效率。
+快捷键操作 / 查看命令 方向键翻历史 Tab 补全 Option&#43;Enter 换行 Ctrl&#43;C 退出等。 中断操作 输错指令时，按 ESC 键立即停止 AI 当前任务。
+恢复历史会话 在启动的时候，执行claude -c，可以继续上次对话
+执行claude -r，可以选择历史对话继续。如果你已经打开了某个对话，你也可以输入 /resume 来切换到其他会话中。
+上下文压缩 Claude Code提供了/compact ，它的作用是压缩对话历史，只保留上下文摘要，从而减少 token 占用。
+这样 Claude 就不会因为上下文太杂而卡壳或跑偏。">
+
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        cwk blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Claude Code 在测试开发中的实战应用-1</h1>
+      
+      <p class="tracked"><strong>chenwenkun</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-09-25T00:00:00Z">September 25, 2025</time>
+      
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - One minute read </span>
+        <span class="f6 mv4 dib tracked"> - 54 words </span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="图片处理"><strong>图片处理</strong></h3>
+<p>Claude Code支持粘贴图片，可以让Claude根据图片来完成任务，例如：“根据图片设计网页”或“分析错误截图原因”。</p>
+<p>上传后的图片不会直接显示出来，而是会用<code>[Image #id]</code>的占位符替代。</p>
+<p><img src="https://pic2.zhimg.com/v2-90a582d7a9e9b608a3e269135c59927d_1440w.jpg" alt=""></p>
+<h3 id="safe-yolo-模式"><strong>Safe YOLO 模式</strong></h3>
+<p>为了安全起见， Claude Code执行一些命令时默认请求你的同意。为了实现更方便的自动化，你可以设置Safe YOLO模式。</p>
+<p>在启动Claude的时候，执行下面的指令即可：</p>
+<p><code>claude --dangerously-skip-permissions</code></p>
+<p>执行这个之后，Claude 会<strong>自动跳过所有权限确认</strong>，不需要你手动点允许。这对于一些重复性任务十分方便。</p>
+<h2 id="二交互与会话管理"><strong>二、交互与会话管理</strong></h2>
+<h3 id="清除聊天上下文"><strong>清除聊天上下文</strong></h3>
+<p>使用 <code>**/clear**</code> 清除聊天上下文，避免累积过多历史信息影响效率。</p>
+<p><img src="https://picx.zhimg.com/v2-b6fa580659c878dea09c2beed92d7aef_1440w.jpg" alt=""></p>
+<h3 id="快捷键操作"><strong>快捷键操作</strong></h3>
+<ul>
+<li><code>/</code> 查看命令</li>
+<li>方向键翻历史</li>
+<li><code>Tab</code> 补全</li>
+<li><code>Option+Enter</code> 换行</li>
+<li><code>Ctrl+C</code> 退出等。</li>
+</ul>
+<h3 id="中断操作"><strong>中断操作</strong></h3>
+<p>输错指令时，按 <code>ESC</code> 键立即停止 AI 当前任务。</p>
+<p><img src="https://picx.zhimg.com/v2-cf4d6b2ad270d90ee347d953a163b657_1440w.jpg" alt=""></p>
+<h3 id="恢复历史会话"><strong>恢复历史会话</strong></h3>
+<p>在启动的时候，执行<code>claude -c</code>，可以继续上次对话</p>
+<p>执行<code>claude -r</code>，可以选择历史对话继续。如果你已经打开了某个对话，你也可以输入 <code>/resume</code> 来切换到其他会话中。</p>
+<p><img src="https://pica.zhimg.com/v2-1a0378318241d62a5a7517b064ff4d50_1440w.jpg" alt=""></p>
+<h3 id="上下文压缩"><strong>上下文压缩</strong></h3>
+<p>Claude Code提供了<code>/compact</code> ，它的作用是<strong>压缩对话历史</strong>，只保留上下文摘要，从而减少 token 占用。</p>
+<p><img src="https://pica.zhimg.com/v2-1ef6384b697dcf63d8f888c8ec33bdb2_1440w.jpg" alt=""></p>
+<p>这样 Claude 就不会因为上下文太杂而卡壳或跑偏。</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/claude-code/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Claude Code</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/cc-real-world-application-2/">Claude Code 在测试开发中的实战应用-2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/-cc-installation-debugging/">Claude Code 安装与调试</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/what-is-cc/">什么是 Claude Code </a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  cwk blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

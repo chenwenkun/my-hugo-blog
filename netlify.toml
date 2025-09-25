@@ -1,11 +1,38 @@
 # Netlify build settings
 [build]
-  # 这是 Netlify 用来构建网站的命令
-  command = "hugo"
+  # 构建命令：先同步Notion，再构建Hugo
+  command = "node sync-notion.js && hugo --minify"
   # 构建完成后，网站的静态文件所在的目录
   publish = "public"
 
 # Hugo version settings for Netlify's environment
 [build.environment]
-  # (最关键的一步) 指定 Netlify 使用的 Hugo 版本
-  HUGO_VERSION = "0.129.0"
+  # 使用最新的Hugo版本
+  HUGO_VERSION = "0.150.0"
+  # Node.js版本
+  NODE_VERSION = "18"
+
+# 头部配置，提升性能
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 静态资源缓存配置
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,21 @@
+Watching for changes in /Users/jobmark/Documents/my-hugo-blog/{archetypes,assets,content,data,i18n,layouts,package.json,static,themes}
+Watching for config changes in /Users/jobmark/Documents/my-hugo-blog/hugo.toml, /Users/jobmark/Documents/my-hugo-blog/themes/ananke/config/_default
+Start building sites … 
+hugo v0.150.0+extended+withdeploy darwin/arm64 BuildDate=2025-09-08T13:01:12Z VendorInfo=brew
+
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 30 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │  9 
+ Processed images │  0 
+ Aliases          │  1 
+ Cleaned          │  0 
+
+Built in 26 ms
+Environment: "development"
+Serving pages from disk
+Web Server is available at http://198.18.0.1:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop

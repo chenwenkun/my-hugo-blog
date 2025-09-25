@@ -4,5 +4,71 @@ languageCode = 'zh-CN' # 设置语言为简体中文
 title = 'cwk blog'
 theme = 'ananke'
 
+# 本地性能优化配置
+enableRobotsTXT = true
+enableGitInfo = false  # 本地开发时关闭Git信息，提升速度
+enableEmoji = true
+
+# 本地开发性能优化
+disableKinds = []  # 不禁用任何页面类型
+timeout = "30s"  # 构建超时时间
+enableInlineShortcodes = true  # 启用内联短代码，提升性能
+
+# 本地缓存优化
+[frontmatter]
+  date = ["date", "publishDate", "lastmod"]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
+  publishDate = ["publishDate", "date"]
+  expiryDate = ["expiryDate"]
+
+# 本地构建性能
+[build]
+  writeStats = true  # 生成构建统计信息
+
+# 分页配置 (Hugo v0.128.0+ 新语法)
+[pagination]
+  pagerSize = 10
+  path = "page"
+
+# 摘要配置
+summaryLength = 150
+
+# Markdown配置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 2
+
+# 本地缓存配置（大幅提升本地性能）
+[caches]
+  [caches.getjson]
+    maxAge = "1h"  # 本地开发时延长缓存时间
+  [caches.getcsv]
+    maxAge = "1h"
+  [caches.images]
+    maxAge = "24h"  # 图片缓存24小时
+  [caches.assets]
+    maxAge = "24h"  # 资源文件缓存
+  [caches.getresource]
+    maxAge = "1h"   # 远程资源缓存
+
 [params]
   description = "技术随笔"
+  author = "chenwenkun"
+  show_reading_time = true
+  
+  # 首页配置
+  mainSections = ["posts"]
+  
+  # 社交链接（可选）
+  # github = "your-github-username"
+  # twitter = "your-twitter-username"

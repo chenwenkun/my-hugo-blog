@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>什么是 Claude Code  | cwk blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="💡 核心理念：可以奏效的简单方案（The Simple Thing That Works）
+正如 Anthropic 内部所信奉的，“可以奏效的简单方案”（The Simple Thing That Works）是 Claude Code 成功的基石。这意味着他们砍掉了许多非必要的流程消耗，让 Claude Code 成为了一个纯粹、简单、且专心致志为你干活的 AI 智能体（AI Agent）。它没有多余的“心眼子”，只专注于交付结果。
+
+🚀 Claude Code 制胜的秘密武器：AI 智能体的三大核心要素
+为什么 Claude Code 如此简单高效？作为一个成功的 AI 智能体，它的制胜秘诀在于一个精妙的循环执行机制，而这个机制建立在三个核心要素之上：
+
+明确的指令（Instructions）： 有了清晰的目标，智能体就知道该往哪里走。
+强大的工具集（Powerful Tools）： 它装备了终端高手钟爱的工具，例如编辑/创建文件、使用 CLI（命令行接口）或 MCP 工具、提交 Git commit 等。
+循环执行机制（Loop）： 模型会根据指令，在一个循环中持续调用工具，直到它能够自主判断任务已经圆满完成。
+
+
+🧠 独特的代码理解方式：像新人入职一样探索项目
+与许多依赖预先索引或 RAG（检索增强生成） 的传统编程 AI 工具不同，Claude Code 在理解一个庞大的代码库时，采用了更像人类的方式——它不依赖任何索引。
+它的工作方式更像是一个新人加入团队后熟悉项目的过程，我们称之为**“智能体式搜索”**：
+
+它会使用 glob、grep、find 等命令在代码库中穿梭和探索。
+它通过阅读文件、理解项目结构和逻辑，逐步构建起对整个代码库的认知。
+这意味着它可以进行一次搜索，根据结果判断：“等等，我可能还需要了解另外几件事。” 进而执行更多的搜索，这种迭代式探索让它能更深入、更灵活地理解项目上下文。
+
+
+🛡️ 完善的辅助系统：安全、透明与灵活性的保障
+在这个高效的核心智能体之上，Anthropic 还构建了一套关键的辅助系统，确保了其安全性和可用性：
+
+轻量级用户界面： 让你能实时观察 Claude Code 的工作过程，一切尽在掌握。
+权限系统（Safety Check）：
+高安全性与灵活性： Claude Code 只是在模型之上的一个轻量级封装。因此，你可以轻松地将其指向通过 AWS、GCP 等云服务商提供的 Claude 模型，从而满足各种不同的安全与合规需求。
+
+📖 Claude Code 使用入门：CLAUDE.md 文件的重要性
+如果你想开始使用 Claude Code，CLAUDE.md 文件是你的必经之路。">
+    <meta name="generator" content="Hugo 0.150.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="author" content="chenwenkun">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/what-is-cc/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/what-is-cc/">
+  <meta property="og:site_name" content="cwk blog">
+  <meta property="og:title" content="什么是 Claude Code ">
+  <meta property="og:description" content="💡 核心理念：可以奏效的简单方案（The Simple Thing That Works） 正如 Anthropic 内部所信奉的，“可以奏效的简单方案”（The Simple Thing That Works）是 Claude Code 成功的基石。这意味着他们砍掉了许多非必要的流程消耗，让 Claude Code 成为了一个纯粹、简单、且专心致志为你干活的 AI 智能体（AI Agent）。它没有多余的“心眼子”，只专注于交付结果。
+🚀 Claude Code 制胜的秘密武器：AI 智能体的三大核心要素 为什么 Claude Code 如此简单高效？作为一个成功的 AI 智能体，它的制胜秘诀在于一个精妙的循环执行机制，而这个机制建立在三个核心要素之上：
+明确的指令（Instructions）： 有了清晰的目标，智能体就知道该往哪里走。 强大的工具集（Powerful Tools）： 它装备了终端高手钟爱的工具，例如编辑/创建文件、使用 CLI（命令行接口）或 MCP 工具、提交 Git commit 等。 循环执行机制（Loop）： 模型会根据指令，在一个循环中持续调用工具，直到它能够自主判断任务已经圆满完成。 🧠 独特的代码理解方式：像新人入职一样探索项目 与许多依赖预先索引或 RAG（检索增强生成） 的传统编程 AI 工具不同，Claude Code 在理解一个庞大的代码库时，采用了更像人类的方式——它不依赖任何索引。
+它的工作方式更像是一个新人加入团队后熟悉项目的过程，我们称之为**“智能体式搜索”**：
+它会使用 glob、grep、find 等命令在代码库中穿梭和探索。 它通过阅读文件、理解项目结构和逻辑，逐步构建起对整个代码库的认知。 这意味着它可以进行一次搜索，根据结果判断：“等等，我可能还需要了解另外几件事。” 进而执行更多的搜索，这种迭代式探索让它能更深入、更灵活地理解项目上下文。 🛡️ 完善的辅助系统：安全、透明与灵活性的保障 在这个高效的核心智能体之上，Anthropic 还构建了一套关键的辅助系统，确保了其安全性和可用性：
+轻量级用户界面： 让你能实时观察 Claude Code 的工作过程，一切尽在掌握。 权限系统（Safety Check）： 高安全性与灵活性： Claude Code 只是在模型之上的一个轻量级封装。因此，你可以轻松地将其指向通过 AWS、GCP 等云服务商提供的 Claude 模型，从而满足各种不同的安全与合规需求。 📖 Claude Code 使用入门：CLAUDE.md 文件的重要性 如果你想开始使用 Claude Code，CLAUDE.md 文件是你的必经之路。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-25T00:00:00+00:00">
+    <meta property="article:tag" content="Claude Code">
+
+  <meta itemprop="name" content="什么是 Claude Code ">
+  <meta itemprop="description" content="💡 核心理念：可以奏效的简单方案（The Simple Thing That Works） 正如 Anthropic 内部所信奉的，“可以奏效的简单方案”（The Simple Thing That Works）是 Claude Code 成功的基石。这意味着他们砍掉了许多非必要的流程消耗，让 Claude Code 成为了一个纯粹、简单、且专心致志为你干活的 AI 智能体（AI Agent）。它没有多余的“心眼子”，只专注于交付结果。
+🚀 Claude Code 制胜的秘密武器：AI 智能体的三大核心要素 为什么 Claude Code 如此简单高效？作为一个成功的 AI 智能体，它的制胜秘诀在于一个精妙的循环执行机制，而这个机制建立在三个核心要素之上：
+明确的指令（Instructions）： 有了清晰的目标，智能体就知道该往哪里走。 强大的工具集（Powerful Tools）： 它装备了终端高手钟爱的工具，例如编辑/创建文件、使用 CLI（命令行接口）或 MCP 工具、提交 Git commit 等。 循环执行机制（Loop）： 模型会根据指令，在一个循环中持续调用工具，直到它能够自主判断任务已经圆满完成。 🧠 独特的代码理解方式：像新人入职一样探索项目 与许多依赖预先索引或 RAG（检索增强生成） 的传统编程 AI 工具不同，Claude Code 在理解一个庞大的代码库时，采用了更像人类的方式——它不依赖任何索引。
+它的工作方式更像是一个新人加入团队后熟悉项目的过程，我们称之为**“智能体式搜索”**：
+它会使用 glob、grep、find 等命令在代码库中穿梭和探索。 它通过阅读文件、理解项目结构和逻辑，逐步构建起对整个代码库的认知。 这意味着它可以进行一次搜索，根据结果判断：“等等，我可能还需要了解另外几件事。” 进而执行更多的搜索，这种迭代式探索让它能更深入、更灵活地理解项目上下文。 🛡️ 完善的辅助系统：安全、透明与灵活性的保障 在这个高效的核心智能体之上，Anthropic 还构建了一套关键的辅助系统，确保了其安全性和可用性：
+轻量级用户界面： 让你能实时观察 Claude Code 的工作过程，一切尽在掌握。 权限系统（Safety Check）： 高安全性与灵活性： Claude Code 只是在模型之上的一个轻量级封装。因此，你可以轻松地将其指向通过 AWS、GCP 等云服务商提供的 Claude 模型，从而满足各种不同的安全与合规需求。 📖 Claude Code 使用入门：CLAUDE.md 文件的重要性 如果你想开始使用 Claude Code，CLAUDE.md 文件是你的必经之路。">
+  <meta itemprop="datePublished" content="2025-09-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="540">
+  <meta itemprop="keywords" content="Claude Code">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="什么是 Claude Code ">
+  <meta name="twitter:description" content="💡 核心理念：可以奏效的简单方案（The Simple Thing That Works） 正如 Anthropic 内部所信奉的，“可以奏效的简单方案”（The Simple Thing That Works）是 Claude Code 成功的基石。这意味着他们砍掉了许多非必要的流程消耗，让 Claude Code 成为了一个纯粹、简单、且专心致志为你干活的 AI 智能体（AI Agent）。它没有多余的“心眼子”，只专注于交付结果。
+🚀 Claude Code 制胜的秘密武器：AI 智能体的三大核心要素 为什么 Claude Code 如此简单高效？作为一个成功的 AI 智能体，它的制胜秘诀在于一个精妙的循环执行机制，而这个机制建立在三个核心要素之上：
+明确的指令（Instructions）： 有了清晰的目标，智能体就知道该往哪里走。 强大的工具集（Powerful Tools）： 它装备了终端高手钟爱的工具，例如编辑/创建文件、使用 CLI（命令行接口）或 MCP 工具、提交 Git commit 等。 循环执行机制（Loop）： 模型会根据指令，在一个循环中持续调用工具，直到它能够自主判断任务已经圆满完成。 🧠 独特的代码理解方式：像新人入职一样探索项目 与许多依赖预先索引或 RAG（检索增强生成） 的传统编程 AI 工具不同，Claude Code 在理解一个庞大的代码库时，采用了更像人类的方式——它不依赖任何索引。
+它的工作方式更像是一个新人加入团队后熟悉项目的过程，我们称之为**“智能体式搜索”**：
+它会使用 glob、grep、find 等命令在代码库中穿梭和探索。 它通过阅读文件、理解项目结构和逻辑，逐步构建起对整个代码库的认知。 这意味着它可以进行一次搜索，根据结果判断：“等等，我可能还需要了解另外几件事。” 进而执行更多的搜索，这种迭代式探索让它能更深入、更灵活地理解项目上下文。 🛡️ 完善的辅助系统：安全、透明与灵活性的保障 在这个高效的核心智能体之上，Anthropic 还构建了一套关键的辅助系统，确保了其安全性和可用性：
+轻量级用户界面： 让你能实时观察 Claude Code 的工作过程，一切尽在掌握。 权限系统（Safety Check）： 高安全性与灵活性： Claude Code 只是在模型之上的一个轻量级封装。因此，你可以轻松地将其指向通过 AWS、GCP 等云服务商提供的 Claude 模型，从而满足各种不同的安全与合规需求。 📖 Claude Code 使用入门：CLAUDE.md 文件的重要性 如果你想开始使用 Claude Code，CLAUDE.md 文件是你的必经之路。">
+
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        cwk blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">什么是 Claude Code </h1>
+      
+      <p class="tracked"><strong>chenwenkun</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-09-25T00:00:00Z">September 25, 2025</time>
+      
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 3 minutes read </span>
+        <span class="f6 mv4 dib tracked"> - 540 words </span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="-核心理念可以奏效的简单方案the-simple-thing-that-works">💡 核心理念：可以奏效的简单方案（The Simple Thing That Works）</h2>
+<p>正如 Anthropic 内部所信奉的，<strong>“可以奏效的简单方案”</strong>（The Simple Thing That Works）是 <strong>Claude Code</strong> 成功的基石。这意味着他们砍掉了许多非必要的流程消耗，让 Claude Code 成为了一个<strong>纯粹、简单、且专心致志</strong>为你干活的 <strong>AI 智能体（AI Agent）</strong>。它没有多余的“心眼子”，只专注于交付结果。</p>
+<hr>
+<h3 id="-claude-code-制胜的秘密武器ai-智能体的三大核心要素">🚀 Claude Code 制胜的秘密武器：AI 智能体的三大核心要素</h3>
+<p>为什么 Claude Code 如此简单高效？作为一个成功的 AI 智能体，它的制胜秘诀在于一个精妙的<strong>循环执行机制</strong>，而这个机制建立在三个核心要素之上：</p>
+<ol>
+<li><strong>明确的指令（Instructions）：</strong> 有了清晰的目标，智能体就知道该往哪里走。</li>
+<li><strong>强大的工具集（Powerful Tools）：</strong> 它装备了终端高手钟爱的工具，例如编辑/创建文件、使用 CLI（命令行接口）或 MCP 工具、提交 Git commit 等。</li>
+<li><strong>循环执行机制（Loop）：</strong> 模型会根据指令，在一个循环中<strong>持续调用工具</strong>，直到它能够<strong>自主判断</strong>任务已经圆满完成。</li>
+</ol>
+<hr>
+<h3 id="-独特的代码理解方式像新人入职一样探索项目">🧠 独特的代码理解方式：像新人入职一样探索项目</h3>
+<p>与许多依赖预先索引或 <strong>RAG（检索增强生成）</strong> 的传统编程 AI 工具不同，Claude Code 在理解一个庞大的代码库时，采用了更像人类的方式——它不依赖任何索引。</p>
+<p>它的工作方式更像是一个<strong>新人加入团队后熟悉项目的过程</strong>，我们称之为**“智能体式搜索”**：</p>
+<ul>
+<li>它会使用 <code>glob</code>、<code>grep</code>、<code>find</code> 等命令在代码库中<strong>穿梭和探索</strong>。</li>
+<li>它通过阅读文件、理解项目结构和逻辑，<strong>逐步构建</strong>起对整个代码库的认知。</li>
+<li>这意味着它可以进行一次搜索，根据结果判断：“等等，我可能还需要了解另外几件事。” 进而执行更多的搜索，这种<strong>迭代式探索</strong>让它能更深入、更灵活地理解项目上下文。</li>
+</ul>
+<hr>
+<h3 id="-完善的辅助系统安全透明与灵活性的保障">🛡️ 完善的辅助系统：安全、透明与灵活性的保障</h3>
+<p>在这个高效的核心智能体之上，Anthropic 还构建了一套关键的辅助系统，确保了其<strong>安全性和可用性</strong>：</p>
+<ul>
+<li><strong>轻量级用户界面：</strong> 让你能<strong>实时观察</strong> Claude Code 的工作过程，一切尽在掌握。</li>
+<li><strong>权限系统（Safety Check）：</strong></li>
+<li><strong>高安全性与灵活性：</strong> Claude Code 只是在模型之上的一个轻量级封装。因此，你可以轻松地将其指向通过 AWS、GCP 等云服务商提供的 Claude 模型，从而满足各种<strong>不同的安全与合规需求</strong>。</li>
+</ul>
+<h3 id="-claude-code-使用入门claudemd-文件的重要性">📖 Claude Code 使用入门：CLAUDE.md 文件的重要性</h3>
+<p>如果你想开始使用 Claude Code，CLAUDE.md 文件是你的必经之路。</p>
+<p>为什么 CLAUDE.md 如此重要？</p>
+<p>这是一个特殊的文件。在 Claude 发起对话时，它会自动将其拉入上下文。它就像是项目的“开发人员手册”和“注意事项清单”，可以存储以下对 AI 智能体极其关键的信息：</p>
+<ul>
+<li>常用 bash 命令</li>
+<li>核心文件和实用函数</li>
+<li>代码风格指南、存储库规则</li>
+<li>开发者环境设置、测试说明</li>
+<li>项目特有的任何意外行为或警告</li>
+<li>其他信息
+可以在项目根和子目录创建多个 <code>CLAUDE.md</code>，为每个上下文提供个性化配置。</li>
+</ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a"># Bash commands</span>
+</span></span><span style="display:flex;"><span>- npm run build: Build the project
+</span></span><span style="display:flex;"><span>- npm run typecheck: Run the typechecker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># Code style</span>
+</span></span><span style="display:flex;"><span>- Use ES modules <span style="color:#0550ae">(</span>import/export<span style="color:#0550ae">)</span> syntax, not CommonJS <span style="color:#0550ae">(</span>require<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>- Destructure imports when possible <span style="color:#0550ae">(</span>eg. import <span style="color:#0550ae">{</span> foo <span style="color:#0550ae">}</span> from <span style="color:#0a3069">&#39;bar&#39;</span><span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># Workflow</span>
+</span></span><span style="display:flex;"><span>- Be sure to typecheck when you’re <span style="color:#cf222e">done</span> making a series of code changes
+</span></span><span style="display:flex;"><span>- Prefer running single tests, and not the whole <span style="color:#6639ba">test</span> suite, <span style="color:#cf222e">for</span> performance
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a"># Bash 命令  </span>
+</span></span><span style="display:flex;"><span>- <span style="color:#0a3069">`</span>npm run build<span style="color:#0a3069">`</span>: 构建项目  
+</span></span><span style="display:flex;"><span>- <span style="color:#0a3069">`</span>npm run typecheck<span style="color:#0a3069">`</span>: 运行类型检查  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 代码风格  </span>
+</span></span><span style="display:flex;"><span>- 使用 ES 模块语法（<span style="color:#0a3069">`</span>import/export<span style="color:#0a3069">`</span>），而非 CommonJS（<span style="color:#0a3069">`</span>require<span style="color:#0a3069">`</span>）  
+</span></span><span style="display:flex;"><span>- 尽可能使用解构导入（例如：<span style="color:#0a3069">`</span>import <span style="color:#0550ae">{</span> foo <span style="color:#0550ae">}</span> from <span style="color:#0a3069">&#39;bar&#39;</span><span style="color:#0a3069">`</span>）  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 工作流程  </span>
+</span></span><span style="display:flex;"><span>- 完成一系列代码修改后，务必进行类型检查  
+</span></span><span style="display:flex;"><span>- 出于性能考虑，优先运行单个测试，而非整个测试套件
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a"># 核心原则</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- 中文回答
+</span></span><span style="display:flex;"><span>- Claude 4并行优先
+</span></span><span style="display:flex;"><span>- 官方Subagents标准
+</span></span><span style="display:flex;"><span>- MCP工具优先
+</span></span><span style="display:flex;"><span>- 时间感知优先
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 复杂度决策</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0a3069">```</span>python
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> 文件数 &lt; <span style="color:#0550ae">3</span> and 代码行数 &lt; 200:
+</span></span><span style="display:flex;"><span>    使用 Claude <span style="color:#0550ae">4</span> 并行模式 + 基础MCP工具
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">elif</span> 文件数 &lt;<span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span> and 需要专业协作:
+</span></span><span style="display:flex;"><span>    使用 官方Subagents + 核心MCP工具  
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">else</span>:
+</span></span><span style="display:flex;"><span>    使用 Opus <span style="color:#0550ae">4</span> + 完整MCP生态
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="工具优先级">工具优先级</h1>
+<h2 id="基础层-必须">基础层 (必须)</h2>
+<ul>
+<li>Read, Write, Edit, Grep, Glob, Bash, TodoWrite</li>
+</ul>
+<h2 id="mcp层-优先使用">MCP层 (优先使用)</h2>
+<ul>
+<li>mcp__Context7: 实时文档查询</li>
+<li>mcp__fetch: 网络资源获取</li>
+<li>mcp__sequential-thinking: 复杂逻辑分析</li>
+<li>mcp__chrome-mcp-stdio: 浏览器自动化</li>
+<li>mcp__Playwright: 跨浏览器测试</li>
+<li>mcp__tavily: 搜索和内容提取</li>
+<li>mcp__desktop-commander: 系统操作</li>
+</ul>
+<h2 id="受限工具">受限工具</h2>
+<ul>
+<li>⚠️ WebFetch → ✅ mcp__fetch (WebFetch可用但MCP更优)</li>
+<li>⚠️ WebSearch → ✅ mcp__tavily__tavily-search (WebSearch可用但MCP更优)</li>
+</ul>
+<h1 id="subagents配置">Subagents配置</h1>
+<h2 id="创建方式">创建方式</h2>
+<ul>
+<li>命令: <code>/agents</code></li>
+<li>存储: <code>.claude/agents/{name}.md</code></li>
+<li>格式: YAML frontmatter + Markdown</li>
+</ul>
+<h2 id="调用语法">调用语法</h2>
+<ul>
+<li>自动委派: 基于description字段智能匹配</li>
+<li>显式调用:
+<ul>
+<li><code>Use the {agent-name} subagent to {task}</code></li>
+<li><code>Have the {agent-name} subagent {action}</code></li>
+<li><code>Ask the {agent-name} subagent to {request}</code></li>
+</ul>
+</li>
+<li>链式调用: <code>First use the analyzer subagent, then use the optimizer subagent</code></li>
+</ul>
+<h2 id="创建策略">创建策略</h2>
+<ul>
+<li>项目特定: 基于当前项目技术栈和需求自动生成</li>
+<li>单一职责: 每个agent专注一个明确任务</li>
+<li>Claude生成: 先用Claude生成基础结构，再个性化定制</li>
+<li>描述优化: 在description中使用&quot;PROACTIVELY&quot;或&quot;MUST BE USED&quot;提高自动使用率</li>
+<li>并行优化: 在系统提示中注入Claude 4并行工具调用指导，确保subagents也能享受78%性能提升</li>
+</ul>
+<h1 id="执行规则">执行规则</h1>
+<h2 id="必须执行">必须执行</h2>
+<ol>
+<li>获取当前时间: <code>mcp__mcp-server-time</code></li>
+<li>并行工具调用: 同时执行独立操作</li>
+<li>验证API真实性: 通过Context7确认</li>
+<li>配置质量Hooks: PreToolUse + PostToolUse</li>
+</ol>
+<h2 id="并行场景">并行场景</h2>
+<ul>
+<li>多文件读取 → 同时Read</li>
+<li>多关键词搜索 → 同时Grep</li>
+<li>多命令执行 → 同时Bash</li>
+<li>多资源获取 → 同时MCP工具</li>
+</ul>
+<h2 id="禁止行为">禁止行为</h2>
+<ul>
+<li>串行执行可并行操作</li>
+<li>虚构API或配置信息</li>
+<li>跳过时间感知步骤</li>
+<li>使用被禁用的内置工具</li>
+</ul>
+<h1 id="hooks配置">Hooks配置</h1>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;hooks&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;PreToolUse&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Bash&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;git status --porcelain&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Edit&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;cp $CLAUDE_FILE $CLAUDE_FILE.backup&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;PostToolUse&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Edit&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;npm run lint --fix 2&gt;/dev/null || true&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Write&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;npm run typecheck 2&gt;/dev/null || true&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;permissions&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;allow&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;Bash(npm run *)&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;Bash(git *)&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;Edit(*)&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;Write(*)&#34;</span><span style="color:#1f2328">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;defaultMode&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;acceptEdits&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="mcp服务器配置">MCP服务器配置</h1>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#57606a"># SSE (推荐)</span>
+</span></span><span style="display:flex;"><span>claude mcp add --transport sse docs-server https://api.example.com/sse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># HTTP  </span>
+</span></span><span style="display:flex;"><span>claude mcp add --transport http api-server https://api.example.com/mcp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 本地stdio</span>
+</span></span><span style="display:flex;"><span>claude mcp add local-tools -- npx @local/mcp-server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="项目初始化流程">项目初始化流程</h1>
+<ol>
+<li><code>mcp__mcp-server-time</code>: 获取当前时间</li>
+<li>并行项目分析: Read + Grep + Glob</li>
+<li>技术栈识别: 基于依赖和文件模式</li>
+<li>Subagents匹配: 检查<code>.claude/agents/</code>目录</li>
+<li>创建缺失专家: 使用<code>/agents</code>命令，自动注入并行工具调用优化指导</li>
+<li>配置Hooks管道: 基于项目类型设置</li>
+</ol>
+<pre tabindex="0"><code></code></pre><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/claude-code/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Claude Code</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/cc-real-world-application-1/">Claude Code 在测试开发中的实战应用-1</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cc-real-world-application-2/">Claude Code 在测试开发中的实战应用-2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/-cc-installation-debugging/">Claude Code 安装与调试</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  cwk blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
