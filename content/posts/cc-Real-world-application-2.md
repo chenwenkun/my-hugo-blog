@@ -4,6 +4,9 @@ date: '2025-09-25'
 tags:
   - Claude Code
 draft: false
+author: chenwenkun
+toc: false
+show_reading_time: true
 ---
 Claude Code 最大的优势是可以结合各种 MCP 工具，通过自然语言直接操作和测试，无需手动编写复杂脚本。以下是实际工作中的应用场景：
 

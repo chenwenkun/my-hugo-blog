@@ -4,6 +4,9 @@ date: '2025-09-25'
 tags:
   - Claude Code
 draft: false
+author: chenwenkun
+toc: true
+show_reading_time: true
 ---
 ## 💡 核心理念：可以奏效的简单方案（The Simple Thing That Works）
 

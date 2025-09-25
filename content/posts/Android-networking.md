@@ -4,6 +4,9 @@ date: '2025-09-25'
 tags:
   - 技术
 draft: false
+author: chenwenkun
+toc: false
+show_reading_time: true
 ---
 众所周知，某些国产安卓自带的程序没法关掉联网权限
 

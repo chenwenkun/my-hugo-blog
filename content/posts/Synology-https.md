@@ -4,6 +4,9 @@ date: '2025-09-25'
 tags:
   - 群晖
 draft: false
+author: chenwenkun
+toc: false
+show_reading_time: true
 ---
 1、腾讯云注册一个域名，需要实名模板，等待审核，购买完成
 

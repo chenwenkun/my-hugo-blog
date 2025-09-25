@@ -4,6 +4,9 @@ date: '2025-09-25'
 tags:
   - 技术
 draft: false
+author: chenwenkun
+toc: false
+show_reading_time: true
 ---
 1、建一个workflows，通过expect，写一个脚本，保存为 xxx,
 
