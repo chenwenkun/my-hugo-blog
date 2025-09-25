@@ -1,22 +1,15 @@
 ---
-title: 这里 notion 的内容
+title: Cloudflare改变邮箱的收件邮箱地址
 date: '2025-09-24'
 tags:
   - 技术
   - 探索
 draft: false
 ---
-# 我的第一篇博客
+# 配置域名邮箱
 
-欢迎来到我的技术博客！这里我会分享：
-
-## 技术心得
-
-- Docker 容器化经验
-- Python 开发技巧
-- 系统运维心得
-## 关于我
-
-我是一名IT专业人士，专注于Python和Shell脚本开发。
-
-**感谢阅读！**
+- 注册一个的域名，最好是腾讯云或者阿里云
+- 注册**Cloudflare,**[https://dash.cloudflare.com/login](https://dash.cloudflare.com/login)，注册之后进行站点添加
+- 配置好该域名的dns，阿里云或者腾讯云上面将DNS替换成**Cloudflare给的**
+- 直到**Cloudflare显示域名为有效的，进入该域名配置出地址邮件-路由输入-创建地址**
+- 自定义地址+验证邮箱可以配置完全
