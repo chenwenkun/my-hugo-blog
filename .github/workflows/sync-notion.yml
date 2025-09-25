@@ -47,4 +47,5 @@ jobs:
           commit_message: "chore: Sync content from Notion"
           file_pattern: 'content/**/*.md'
           push_options: '--force-with-lease'
-          skip_fetch: false
+          skip_fetch: true
+          skip_dirty_check: true
