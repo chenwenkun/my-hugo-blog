@@ -1,0 +1,79 @@
+# Git 相关文件
+.git
+.gitignore
+.github
+
+# 构建和缓存文件
+public
+resources/_gen
+.hugo_build.lock
+hugo_stats.json
+*.log
+
+# 依赖和包管理
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境和配置文件
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE 和编辑器文件
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
+.tmp
+.temp
+
+# 部署相关文件
+deploy.log
+deploy.sh
+benchmark.sh
+
+# Docker 相关文件（避免递归复制）
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# 文档和说明文件
+README.md
+LICENSE
+CHANGELOG.md
+
+# 测试文件
+test
+tests
+*.test.js
+
+# 备份文件
+*.bak
+*.backup
+
+# Netlify 相关
+netlify.toml
+_redirects
+_headers
+
+# 其他不需要的文件
+*.pid
+*.seed
+*.pid.lock

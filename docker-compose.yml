@@ -1,0 +1,48 @@
+services:
+  hugo-blog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/arm64  # 专门为 Mac mini M4 优化
+    container_name: hugo-blog
+    restart: unless-stopped
+    ports:
+      - "1313:1313"    # 统一使用1313端口
+    environment:
+      # Hugo 环境配置
+      - HUGO_ENV=development
+      # 时区设置
+      - TZ=Asia/Shanghai
+    volumes:
+      # 挂载整个项目目录以支持Git拉取
+      - .:/app
+      # 挂载SSH密钥以支持Git拉取
+      - ~/.ssh:/root/.ssh:ro
+      # 排除不需要的目录
+      - /app/node_modules
+      - /app/public
+      # 日志持久化
+      - git-logs:/var/log
+    networks:
+      - hugo-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:1313/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "com.docker.compose.service=hugo-blog"
+      - "description=Hugo Blog with Git Auto-Update"
+
+volumes:
+  git-logs:
+    driver: local
+
+networks:
+  hugo-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

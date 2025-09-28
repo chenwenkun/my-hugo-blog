@@ -6,15 +6,15 @@ hugo v0.150.0+extended+withdeploy darwin/arm64 BuildDate=2025-09-08T13:01:12Z Ve
 
                   │ EN 
 ──────────────────┼────
- Pages            │ 30 
+ Pages            │ 31 
  Paginator pages  │  0 
  Non-page files   │  0 
- Static files     │  9 
+ Static files     │ 10 
  Processed images │  0 
  Aliases          │  1 
  Cleaned          │  0 
 
-Built in 26 ms
+Built in 42 ms
 Environment: "development"
 Serving pages from disk
 Web Server is available at http://198.18.0.1:1313/ (bind address 0.0.0.0) 
