@@ -13,12 +13,19 @@ RUN npm ci --only=production
 # 第二阶段：Hugo构建阶段
 FROM --platform=linux/arm64 alpine:3.18 AS hugo-builder
 
-# 安装 Hugo 和必要工具
+# 安装必要工具
 RUN apk add --no-cache \
-    hugo \
+    wget \
     git \
     ca-certificates \
     && rm -rf /var/cache/apk/*
+
+# 手动安装最新版Hugo
+RUN wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.119.0/hugo_extended_0.119.0_linux-arm64.tar.gz \
+    && tar -xzf hugo.tar.gz \
+    && mv hugo /usr/local/bin/ \
+    && rm hugo.tar.gz \
+    && chmod +x /usr/local/bin/hugo
 
 WORKDIR /src
 
@@ -35,7 +42,14 @@ RUN hugo --minify --gc
 FROM --platform=linux/arm64 nginx:1.25-alpine
 
 # 安装 Node.js、Git、SSH 和 crond 用于 Git 拉取功能
-RUN apk add --no-cache nodejs npm git openssh-client dcron hugo ca-certificates
+RUN apk add --no-cache nodejs npm git openssh-client dcron ca-certificates wget
+
+# 手动安装最新版Hugo（与构建阶段保持一致）
+RUN wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.119.0/hugo_extended_0.119.0_linux-arm64.tar.gz \
+    && tar -xzf hugo.tar.gz \
+    && mv hugo /usr/local/bin/ \
+    && rm hugo.tar.gz \
+    && chmod +x /usr/local/bin/hugo
 
 # 创建应用目录
 WORKDIR /app
